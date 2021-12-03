@@ -69,7 +69,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
   }
-button {
+#Guess {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     width: 56px;
@@ -79,7 +79,7 @@ button {
     color: white;
     text-transform: uppercase;
 }
-button:hover{
+#Guess:hover{
 
     box-shadow: 1.5px 1.5px ;
     transition: 0.09s ease;
