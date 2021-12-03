@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scrpt.js">
+</head>
+<body>
+    <div id="game">
+        <form>
+            <img src="danger.png" id="danger">
+            <div id="info">
+                <p>The Area 51 database has been hacked.
+                    And the hackers will activate the self-destruction that will detonate all the nuclear heads in earth, and this will destroy the world.
+                    Fortunately there is a button to stop the self-destruction sequence. But the professor has lost his memory and all he remembers is that to decipher the code you have to enter a number between 1 and 100, but be careful, you only have 10 attempts.
+                    </p>
+                    <ul>
+                         <li id="msn">Mission</li> 
+                        
+                        <li>Try to guess what the number <span style="color: rgb(247, 73, 73);">(between 1 and 100)</span> will be to decode and save the world.</li>
+                    </ul>
+                    <hr>
+            </div>
+            <div id="play">
+                <div id="input">
+                    <input type="number" placeholder="XXX" id="put">
+                    <input type="button" value="TRY" id="Guess" onclick="boton()">
+                </div>
+                <p id="system">System:<span id="msg"> </span> </p>
+                <p class="para">You have <span id="lives">10</span><span class="para"> tries remaining.</span> </p>
+            </div>
+
+        </form>
+        
+        <video id="bgvid" autoplay muted loop>
+            <source src="bg.mp4" type="video/mp4">
+        </video>
+
+    </div> 
+    <script>
+        var input_btn = document.getElementById("put");
+        var message = document.getElementById("msg");
+        var rand = Math.floor(Math.random()*100)+1;
+        var l = document.getElementById("lives")
+        var s = 10
+        console.log(rand)
+        function boton(){
+            
+            if(input_btn.value==rand){
+
+                if (s==10 || s==9){
+                    message.innerHTML = "what!";
+                }
+                else{
+                    message.innerHTML = "code decipher!";
+
+                }
+                
+            }
+            else if(input_btn.value>rand){
+                message.innerHTML = "too big!";
+                s--
+                l.innerHTML=s
+            }
+            else{
+                message.innerHTML = "too small!";
+                s--
+                l.innerHTML=s
+            }
+            if (s==0){
+               document.getElementById("Guess").style.display="none" 
+               message.innerHTML = "you lose!";
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

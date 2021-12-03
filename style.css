@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(/body-bg.png);
+    font-family: 'Courier New', monospace;
+}
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+video {
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(45%);
+}
+form {
+    z-index: 2;
+    background-color: rgb(59, 59, 59);
+    height: 500px;
+    width: 700px;
+    position: absolute;
+    box-shadow: 4px 4px #fc1b2b;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#play {
+    text-align: center;
+}
+.para {
+    color: white;
+}
+#info {
+    font-size: 18px;
+    padding: 0px 40px ;
+    position: absolute;
+    top: 100px;
+    color: white;
+}
+hr{
+    border: 2px solid #fc1b2b;
+    margin:  -2% 0% 0% 0%;
+}
+#danger {
+    position: absolute;
+    width: 120px;
+    top: 5px;
+}
+#msg {
+    color: #fc1b2b;
+}
+#system {
+    color: white;
+}
+input {
+    width: 50px;
+    height: 31px;
+    text-align: center;
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 56px;
+    height: 36px;
+    background-color: #fc1b2b;
+    border: 0px;
+    color: white;
+    text-transform: uppercase;
+}
+button:hover{
+
+    box-shadow: 1.5px 1.5px ;
+    transition: 0.09s ease;
+}
+#lives {
+    color: #fc1b2b;
+}
+#msn {
+    color: #fc1b2b;
+    list-style: none;
+    font-size: 22px;
+}
