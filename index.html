@@ -47,6 +47,12 @@
         var l = document.getElementById("lives")
         var s = 10
         console.log(rand)
+    input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("Guess").click();
+    }
+    });
         function boton(){
             
             if(input_btn.value==rand){
