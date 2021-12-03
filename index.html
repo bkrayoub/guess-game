@@ -10,6 +10,10 @@
 </head>
 <body>
     <div id="game">
+        <div id="sound">
+            <img src="sound\off.png" onclick="off1()" id="off">
+            <img src="sound\on.png"  onclick="on1()" id="on">
+        </div>
         <form>
             <img src="danger.png" id="danger">
             <div id="info">
@@ -44,25 +48,47 @@
         var input_btn = document.getElementById("put");
         var message = document.getElementById("msg");
         var rand = Math.floor(Math.random()*100)+1;
-        var l = document.getElementById("lives")
-        var s = 10
+        var l = document.getElementById("lives");
+        var s = 10;
+        var done = new Audio('sound effect/done.mp3');
+        var no = new Audio('sound effect/no.mp3');
+        var w = new Audio('sound effect/Wrong.mp3');
+        var bgs = new Audio('sound effect/bg-sound.mp3');
+        var bg = new Audio('sound effect/bg.mp3')
+        var off = document.getElementById('off')
+        var on = document.getElementById('on')
+
         console.log(rand)
+        bg.play();
     input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("Guess").click();
     }
     });
+        function on1(){
+            on.style.display="none"
+            off.style.display="block"
+            bg.pause();
+        }
+        function off1(){
+            off.style.display="none"
+            on.style.display="block"
+            bg.play();
+        }
         function boton(){
-            
+        
             if(input_btn.value==rand){
 
                 if (s==10 || s==9){
                     message.innerHTML = "What?! Professor is that you??";
+                    message.style.color="green"
+                    done.play();
                 }
                 else{
                     message.innerHTML = "Access Granted!";
-
+                    message.style.color="green"
+                    done.play();
                 }
                 
             }
@@ -70,16 +96,29 @@
                 message.innerHTML = "too big!";
                 s--
                 l.innerHTML=s
+                    if (s==3){
+                        no.play();
+                    }
+                    else{
+                        w.play();
+                    }
             }
             else{
                 message.innerHTML = "too small!";
                 s--
                 l.innerHTML=s
+                    if (s==3){
+                        no.play();
+                    }
+                    else{
+                        w.play();
+                    }
             }
             if (s==0){
                document.getElementById("Guess").style.display="none" 
-               message.innerHTML = "you lose!";
+               message.innerHTML = "Access denied!";
             }
+
         }
 
 

@@ -26,7 +26,26 @@ form {
     justify-content: center;
     align-items: flex-end;
 }
-
+#sound {
+    z-index: 3;
+    position: absolute;
+}
+#sound img {
+    position: absolute;
+    width: 50px;
+    left: 418px;
+    bottom: 186px;
+    filter: brightness(70%);
+}
+#sound img:hover {
+    filter: brightness(100%);
+}
+#on {
+    display: block;
+}
+#off{
+    display: none;
+}
 #play {
     text-align: center;
 }
