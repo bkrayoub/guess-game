@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Call Of Area 51</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="scrpt.js">
+    <link rel="shortcut icon" href="danger.png">
 </head>
 <body>
     <div id="game">
         <div id="sound">
             <img src="sound\off.png" onclick="off1()" id="off">
             <img src="sound\on.png"  onclick="on1()" id="on">
+        </div>
+        <div id="replay">
+            <i class="fas fa-redo-alt" id="re" onclick="replay()"></i>
         </div>
         <form>
             <img src="danger.png" id="danger">
@@ -66,6 +70,9 @@
     document.getElementById("Guess").click();
     }
     });
+        function replay(){
+            location.reload();
+        }
         function on1(){
             on.style.display="none"
             off.style.display="block"

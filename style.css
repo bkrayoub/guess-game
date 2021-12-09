@@ -111,3 +111,14 @@ input[type=number] {
     list-style: none;
     font-size: 22px;
 }
+#re {
+    z-index: 5;
+    color: #b0131e;
+    position: absolute;
+    top: 90.5px;
+    left: 150px;
+    font-size: 45px;
+}
+#re:hover {
+    color: #fc1b2b;
+}
